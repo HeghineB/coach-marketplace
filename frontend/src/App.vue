@@ -1,13 +1,16 @@
 <template>
   <div id="app">
-    <p>Hello World</p>
+    <Landing/>
   </div>
 </template>
 
 <script>
+import Landing from "./components/landing/Landing";
 export default {
   name: "app",
-  components: {}
+  components: {
+    Landing
+  }
 };
 </script>
 
