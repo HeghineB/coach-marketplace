@@ -1,9 +1,20 @@
 <template>
-  <div class="landing_body_container">
-    <p>This is body of the home page</p>
-    <SearchLanding/>
-    <SuggestionsLanding/>
-    <ArticlesLanding/>
+  <!-- <v-parallax :src="require('../../assets/images/background1.jpg')"> -->
+  <div>
+    <div class="landing_intro">
+      <v-img :src="require('../../assets/images/landing_main.jpg')" aspect-ratio="1.7" contain>
+        <div class="flex text-xs-center">
+          <h1 class="display-2">Welcome to Coach for me!</h1>
+          <div class="subheading">This is the best place to find a coach</div>
+        </div>
+      </v-img>
+    </div>
+    <div>
+      <SearchLanding/>
+      <SuggestionsLanding/>
+      <ArticlesLanding/>
+      <!-- </v-parallax> -->
+    </div>
   </div>
 </template>
 
@@ -23,11 +34,18 @@ export default {
 </script>
 
 <style scoped>
-.landing_body_container {
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: center;
-  border: 1px solid red;
+.landing_intro {
+  text-align: center;
+  vertical-align: middle;
+  color: orange;
+}
+
+/* .flex {
+  height: 100%;
+} */
+.flex {
+  color: white;
+  padding: 20% 0;
 }
 </style>
 
