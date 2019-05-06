@@ -1,5 +1,7 @@
 <template>
-  <div class="hello"></div>
+  <div class="hello">
+    <img src="../assets/images/runner.png" class="header-image">
+  </div>
 </template>
 
 <script>
@@ -8,4 +10,8 @@ export default {};
 
 
 <style>
+.header-image {
+}
 </style>
+
+
