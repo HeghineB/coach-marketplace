@@ -16,8 +16,7 @@
         >
           <template v-slot:selection="data">
             <v-chip :selected="data.selected" close @input="remove(data.item)">
-              <strong>{{ data.item }}</strong>&nbsp;
-              <span>(interest)</span>
+              <strong>{{ data.item }}</strong>
             </v-chip>
           </template>
         </v-combobox>
@@ -34,8 +33,7 @@
         >
           <template v-slot:selection="data">
             <v-chip :selected="data.selected" close @input="remove(data.item)">
-              <strong>{{ data.item }}</strong>&nbsp;
-              <span>(interest)</span>
+              <strong>{{ data.item }}</strong>
             </v-chip>
           </template>
         </v-combobox>

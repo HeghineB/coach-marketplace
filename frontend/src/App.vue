@@ -3,29 +3,43 @@
     <v-toolbar app>
       <div class="v-toolbar__content">
         <img class="header-logo" src="./assets/images/logo_transparent.png" width="10%">
+
         <div>
-          <a href="#login" class="v-btn v-btn--flat theme--light">
+          <router-link to="/" class="v-btn v-btn--flat theme--light">
+            <div class="v-btn__content">
+              <span>Home</span>
+            </div>
+          </router-link>
+          <router-link to="/login" class="v-btn v-btn--flat theme--light">
             <div class="v-btn__content">
               <span>Login</span>
             </div>
-          </a>
-          <a href="#signin" class="v-btn v-btn--flat theme--light">
+          </router-link>
+          <router-link to="/signin" class="v-btn v-btn--flat theme--light">
             <div class="v-btn__content">
               <span>Sign In</span>
             </div>
-          </a>
+          </router-link>
+          <router-link to="/search" class="v-btn v-btn--flat theme--light">
+            <div class="v-btn__content">
+              <span>Search</span>
+            </div>
+          </router-link>
+          <Favourites v-bind:favourite="favourite"></Favourites>
         </div>
       </div>
     </v-toolbar>
     <v-content>
       <!-- <v-container> -->
-      <Landing/>
+      <!-- <Landing/>  -->
+      <router-view v-on:addToFavourites="addToFavourites"></router-view>
+
       <!-- </v-container> -->
     </v-content>
     <v-footer dark height="auto">
       <v-card class="flex" flat tile>
         <v-card-title class="orange">
-          <strong class="subheading">Make your life full of sports!</strong>
+          <strong class="subheading">Fill your life with sports!</strong>
 
           <v-spacer></v-spacer>
 
@@ -44,21 +58,32 @@
 </template>
 
 <script>
-import Landing from "./components/landing/Landing";
+import Favourites from "./components/landing/landing_components/Favourites.vue";
 export default {
   name: "app",
   components: {
-    Landing
+    Favourites
   },
-  data: () => ({
-    icons: [
-      "fab fa-facebook",
-      "fab fa-twitter",
-      "fab fa-google-plus",
-      "fab fa-linkedin",
-      "fab fa-instagram"
-    ]
-  })
+  data() {
+    return {
+      icons: [
+        "fab fa-facebook",
+        "fab fa-twitter",
+        "fab fa-google-plus",
+        "fab fa-linkedin",
+        "fab fa-instagram"
+      ],
+      favourite: []
+    };
+  },
+
+  methods: {
+    addToFavourites(id) {
+      this.favourite.indexOf(id) === -1
+        ? this.favourite.push(id)
+        : this.favourite.splice(this.favourite.indexOf(id), 1);
+    }
+  }
 };
 </script>
 

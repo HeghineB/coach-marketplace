@@ -2,7 +2,7 @@
   <!-- <v-parallax :src="require('../../assets/images/background1.jpg')"> -->
   <div>
     <div class="landing_intro">
-      <v-img :src="require('../../assets/images/landing_main.jpg')" aspect-ratio="1.7" contain>
+      <v-img :src="require('../assets/images/landing_main.jpg')" aspect-ratio="1.7" contain>
         <div class="flex text-xs-center">
           <h1 class="display-2">Welcome to Coach for me!</h1>
           <div class="subheading">This is the best place to find a coach</div>
@@ -19,9 +19,9 @@
 </template>
 
 <script>
-import SearchLanding from "./landing_components/SearchLanding";
-import SuggestionsLanding from "./landing_components/SuggestionsLanding";
-import ArticlesLanding from "./landing_components/ArticlesLanding";
+import SearchLanding from "../components/landing/landing_components/SearchLanding";
+import SuggestionsLanding from "../components/landing/landing_components/SuggestionsLanding";
+import ArticlesLanding from "../components/landing/landing_components/ArticlesLanding";
 
 export default {
   name: "Landing",
