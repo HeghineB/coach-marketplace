@@ -1,26 +1,15 @@
 <template>
   <div id="app">
-    <my-header></my-header>
+    <p>Hello World</p>
   </div>
 </template>
 
 <script>
-import Header from "./components/Header";
 export default {
   name: "app",
-  components: {
-    "my-header": Header
-  }
+  components: {}
 };
 </script>
 
 <style>
-#app {
-  font-family: "Avenir", Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
 </style>
