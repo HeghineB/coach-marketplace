@@ -1,13 +1,16 @@
 <template>
   <div id="app">
-    <p>Hello World</p>
+    <Footer></Footer>
   </div>
 </template>
 
 <script>
+import Footer from "/Users/Joe/Desktop/Projects/coach-marketplace/frontend/src/components/Footer.vue";
 export default {
   name: "app",
-  components: {}
+  components: {
+    Footer
+  }
 };
 </script>
 
