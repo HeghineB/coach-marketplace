@@ -16,6 +16,7 @@
     "vuetify": "^1.5.14"
   },
   "devDependencies": {
+    "@fortawesome/fontawesome-free": "^5.8.2",
     "@mdi/font": "^3.6.95",
     "@vue/cli-plugin-babel": "^3.5.0",
     "@vue/cli-plugin-eslint": "^3.5.0",
