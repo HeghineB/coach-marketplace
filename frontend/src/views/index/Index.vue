@@ -1,16 +1,18 @@
 <template>
   <div class="index-page">
-    Here insert your / content
+    <hello-world/>
   </div>
 </template>
 
 <script>
-// import Foo from 'bar/foo'
+import VuetifyHelloWorld from '../../components/HelloWorld'
 
 export default {
   name: 'index-page',
   mixins: [],
-  components: {},
+  components: {
+    HelloWorld: VuetifyHelloWorld
+  },
   props: {},
   data() {
     return {}
