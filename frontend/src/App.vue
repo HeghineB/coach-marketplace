@@ -32,7 +32,11 @@
     <v-content>
       <!-- <v-container> -->
       <!-- <Landing/>  -->
-      <router-view v-on:addToFavourites="addToFavourites"></router-view>
+      <router-view
+        :filteredCoachesList="filteredCoachesList"
+        v-on:addToFavourites="addToFavourites"
+        v-on:searchQuery="searchQuery"
+      ></router-view>
 
       <!-- </v-container> -->
     </v-content>
@@ -59,6 +63,7 @@
 
 <script>
 import Favourites from "./components/landing/landing_components/Favourites.vue";
+import Queries from "./_utils/queries/coaches/index.js";
 export default {
   name: "app",
   components: {
@@ -73,8 +78,17 @@ export default {
         "fab fa-linkedin",
         "fab fa-instagram"
       ],
-      favourite: []
+      favourite: [],
+      coachesList: [],
+      search: ""
     };
+  },
+  async created() {
+    this.coachesList = await Queries.getCoaches();
+    // axios
+    //   .get("https://my.api.mockaroo.com/coach-mp1.json?key=19f08970")
+    //   .then(res => (this.coachesList = res.data))
+    //   .catch(err => console.log(err));
   },
 
   methods: {
@@ -82,6 +96,18 @@ export default {
       this.favourite.indexOf(id) === -1
         ? this.favourite.push(id)
         : this.favourite.splice(this.favourite.indexOf(id), 1);
+    },
+    searchQuery(search) {
+      this.search = search;
+      console.log("method", this.search);
+      console.log(this.filteredCoachesList);
+    }
+  },
+  computed: {
+    filteredCoachesList: function() {
+      let filterCity = this.coachesList.filter(a => a.city.match(this.search));
+      console.log("app", filterCity);
+      return filterCity;
     }
   }
 };

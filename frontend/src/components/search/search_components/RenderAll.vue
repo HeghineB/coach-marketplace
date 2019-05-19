@@ -1,6 +1,6 @@
 <template>
   <v-layout row wrap>
-    <v-flex xs3 d-flex :key="coach.id" v-for="coach in coaches">
+    <v-flex xs3 d-flex :key="coach.id.$oid" v-for="coach in filteredCoachesList">
       <OneSmall :coach="coach" v-on:addToFavourites="addToFavourites"/>
     </v-flex>
   </v-layout>
@@ -13,7 +13,7 @@ export default {
   components: {
     OneSmall
   },
-  props: ["coaches"],
+  props: ["filteredCoachesList"],
   methods: {
     addToFavourites(id) {
       this.$emit("addToFavourites", id);

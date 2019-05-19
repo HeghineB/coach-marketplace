@@ -10,7 +10,7 @@
       </v-img>
     </div>
     <div>
-      <SearchLanding/>
+      <SearchLanding :coachesList="coachesList"/>
       <SuggestionsLanding/>
       <ArticlesLanding/>
       <!-- </v-parallax> -->
@@ -29,7 +29,8 @@ export default {
     SearchLanding,
     SuggestionsLanding,
     ArticlesLanding
-  }
+  },
+  props: ["coachesList"]
 };
 </script>
 

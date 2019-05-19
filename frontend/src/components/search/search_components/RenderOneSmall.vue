@@ -13,7 +13,7 @@
         </v-img>
         <v-card-title>
           <div>
-            <span class="grey--text">TRX</span>
+            <span class="grey--text">{{coach.sport}}</span>
             <br>
             <span>{{coach.city}}</span>
             <br>
