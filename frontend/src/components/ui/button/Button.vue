@@ -1,5 +1,7 @@
 <template>
-  <div class="name"></div>
+  <v-btn color="success">
+    Success
+  </v-btn>
 </template>
 
 <script>
