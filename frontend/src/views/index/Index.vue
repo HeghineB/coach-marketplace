@@ -1,21 +1,15 @@
 <template>
-  <div class="index-page">
-    <hello-world/>
-  </div>
+  <div class="index-page"></div>
 </template>
 
 <script>
-import VuetifyHelloWorld from '../../components/HelloWorld'
-
 export default {
-  name: 'index-page',
+  name: "index-page",
   mixins: [],
-  components: {
-    HelloWorld: VuetifyHelloWorld
-  },
+  components: {},
   props: {},
   data() {
-    return {}
+    return {};
   },
   computed: {},
   methods: {},
@@ -28,9 +22,10 @@ export default {
   updated() {},
   beforeDestroy() {},
   destroyed() {}
-}
+};
 </script>
 
 <style scoped>
-.index-page {}
+.index-page {
+}
 </style>

@@ -1,34 +1,41 @@
 <template>
-  <div class="main-footer">
+  <v-footer dark height="auto">
+    <v-card class="flex" flat tile>
+      <v-card-title class="orange">
+        <strong class="subheading">Fill your life with sports!</strong>
 
-  </div>
+        <v-spacer></v-spacer>
+
+        <v-btn v-for="icon in icons" :key="icon" class="mx-3" dark icon>
+          <v-icon size="24px">{{ icon }}</v-icon>
+        </v-btn>
+      </v-card-title>
+
+      <v-card-actions class="grey darken-3 justify-center">
+        &copy;2019 —
+        <strong>Coach4me</strong>
+      </v-card-actions>
+    </v-card>
+  </v-footer>
 </template>
 
 <script>
-// import Foo from 'bar/foo'
-
 export default {
-  name: 'main-footer',
-  mixins: [],
+  name: "app",
   components: {},
-  props: {},
   data() {
-    return {}
-  },
-  computed: {},
-  methods: {},
-  watch: {},
-  beforeCreated() {},
-  created() {},
-  beforeMount() {},
-  mounted() {},
-  beforeUpdate() {},
-  updated() {},
-  beforeDestroy() {},
-  destroyed() {}
-}
+    return {
+      icons: [
+        "fab fa-facebook",
+        "fab fa-twitter",
+        "fab fa-google-plus",
+        "fab fa-linkedin",
+        "fab fa-instagram"
+      ]
+    };
+  }
+};
 </script>
 
-<style scoped>
-.main-footer {}
+<style>
 </style>
