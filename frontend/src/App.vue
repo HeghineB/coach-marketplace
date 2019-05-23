@@ -3,11 +3,11 @@
 </template>
 
 <script>
-import Header from "./components/ui/layout/header/Header";
+import MainHeader from "./components/ui/layout/header/MainHeader";
 export default {
   name: "app",
   components: {
-    Header
+    MainHeader
   }
 };
 </script>
