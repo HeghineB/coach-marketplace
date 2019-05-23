@@ -25,7 +25,6 @@
               <span>Search</span>
             </div>
           </router-link>
-          <Favourites v-bind:favourite="favourite"></Favourites>
         </div>
       </div>
     </v-toolbar>
@@ -33,23 +32,11 @@
 </template>
 
 <script>
-import Favourites from "/Users/Joe/Desktop/Projects/coach-marketplace/frontend/src/components/header-components/Favourites.vue";
 export default {
   name: "app",
-  components: {
-    Favourites
-  },
+  components: {},
   data() {
-    return {
-      favourite: []
-    };
-  },
-  methods: {
-    addToFavourites(id) {
-      this.favourite.indexOf(id) === -1
-        ? this.favourite.push(id)
-        : this.favourite.splice(this.favourite.indexOf(id), 1);
-    }
+    return {};
   }
 };
 </script>
