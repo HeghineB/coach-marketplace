@@ -2,11 +2,7 @@
   <v-app>
     <v-toolbar app>
       <div class="v-toolbar__content">
-        <img
-          class="header-logo"
-          src="/Users/Joe/Desktop/Projects/coach-marketplace/frontend/src/assets/images/logo_transparent.png"
-          width="10%"
-        >
+        <img class="header-logo" src="../../../../assets/images/logo_transparent.png" width="10%">
 
         <div>
           <router-link to="/" class="v-btn v-btn--flat theme--light">
