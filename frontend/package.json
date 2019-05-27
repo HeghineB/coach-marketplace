@@ -11,6 +11,7 @@
     "axios": "^0.18.0",
     "core-js": "^2.6.5",
     "uuid": "^3.3.2",
+    "vee-validate": "^2.2.8",
     "vue": "^2.6.6",
     "vue-router": "^3.0.6",
     "vuetify": "^1.5.5"
