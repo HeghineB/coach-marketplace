@@ -1,7 +1,5 @@
 <template>
-  <div class="index-page">
-    <hello-world/>
-  </div>
+  <div class="index-page"></div>
 </template>
 
 <script>
