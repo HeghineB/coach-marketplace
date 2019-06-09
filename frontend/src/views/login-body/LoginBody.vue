@@ -1,19 +1,21 @@
+
 <template>
-  <div class="main-footer">
-    *footer*
+  <div class="login-page">
+    <login-form/>
+    <!-- Taht's is a convention "snake-case'" to put in slite -->
   </div>
 </template>
 
 <script>
-// import Foo from 'bar/foo'
+import LoginForm from '../../components/ui/form/LoginForm'
 
 export default {
-  name: 'main-footer',
+  name: "login-page",
   mixins: [],
-  components: {},
+  components: { LoginForm },
   props: {},
   data() {
-    return {}
+    return {};
   },
   computed: {},
   methods: {},
@@ -26,9 +28,10 @@ export default {
   updated() {},
   beforeDestroy() {},
   destroyed() {}
-}
+};
 </script>
 
 <style scoped>
-.main-footer {}
+.login-page {
+}
 </style>

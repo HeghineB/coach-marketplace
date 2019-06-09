@@ -39,7 +39,9 @@ export default {
   },
   watch: {},
   beforeCreated() {},
-  created() {},
+  created() {
+    console.log('in created hoow from Login',this.$router)
+  },
   beforeMount() {},
   mounted() {},
   beforeUpdate() {},
