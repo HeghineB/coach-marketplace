@@ -1,13 +1,13 @@
 <template>
-  <div class="name">
-    <p>{{ $store.state }}</p>
+  <div class="container">
+    <p>Direct access to current state: {{ $store.state.countries.data }}</p>
     <StoreButton />
+    <div class="country" v-for="country in countries" :key="country">{{ country }}</div>
   </div>
 </template>
 
 <script>
 import StoreButton from "../components/ui/StoreButton";
-// import Foo from 'bar/foo'
 
 export default {
   name: "name",
@@ -19,7 +19,11 @@ export default {
   data() {
     return {};
   },
-  computed: {},
+  computed: {
+    countries() {
+      return this.$store.getters.allCountries;
+    }
+  },
   methods: {},
   watch: {},
   beforeCreated() {},
@@ -34,4 +38,9 @@ export default {
 </script>
 
 <style  scoped>
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 </style>

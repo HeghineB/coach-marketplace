@@ -1,6 +1,6 @@
 <template>
-  <div class="name">
-    <button @click="sayHello">Click me</button>
+  <div class="button">
+    <button @click="sayHello">Generate countries</button>
   </div>
 </template>
 
@@ -34,4 +34,11 @@ export default {
 </script>
 
 <style scoped>
+button {
+  width: 70px;
+  color: white;
+  border-radius: 4px;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+  background: rgb(28, 184, 65);
+}
 </style>`
