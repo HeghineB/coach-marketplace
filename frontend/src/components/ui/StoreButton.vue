@@ -18,7 +18,7 @@ export default {
   computed: {},
   methods: {
     sayHello() {
-      console.log("HELLO click me button");
+      return console.log("HELLO click me button");
     }
   },
   watch: {},

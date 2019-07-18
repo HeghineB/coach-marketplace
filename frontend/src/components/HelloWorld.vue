@@ -1,5 +1,6 @@
 <template>
   <div class="name">
+    <p>{{ $store.state }}</p>
     <StoreButton />
   </div>
 </template>
