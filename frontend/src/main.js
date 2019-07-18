@@ -1,11 +1,10 @@
-import Vue from 'vue'
-import App from './App.vue'
-import router from './router/index'
+import Vue from 'vue';
+import App from './App.vue';
+import router from './router/index';
 
-// Use Vuetify
-import './plugins/vuetify'
+import './plugins/vuetify';
 
-Vue.config.productionTip = false
+Vue.config.productionTip = false;
 
 new Vue({
   router,

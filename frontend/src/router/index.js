@@ -3,6 +3,7 @@ import Router from 'vue-router'
 
 import Index from '../views/index/Index'
 
+
 const routes = [
   { path: '/', redirect: '/home' },
   { path: '/home', name: 'home', component: Index },

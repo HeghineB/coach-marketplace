@@ -1,24 +1,26 @@
 <template>
-  <div class="index-page">
-    <Index/>
+  <div class="name">
+    <button @click="sayHello">Click me</button>
   </div>
 </template>
 
 <script>
-import Index from "../../components/HelloWorld";
+// import Foo from 'bar/foo'
 
 export default {
-  name: "index-page",
+  name: "StoreButton",
   mixins: [],
-  components: {
-    Index
-  },
+  components: {},
   props: {},
   data() {
     return {};
   },
   computed: {},
-  methods: {},
+  methods: {
+    sayHello() {
+      console.log("HELLO click me button");
+    }
+  },
   watch: {},
   beforeCreated() {},
   created() {},
@@ -32,6 +34,4 @@ export default {
 </script>
 
 <style scoped>
-.index-page {
-}
-</style>
+</style>`
