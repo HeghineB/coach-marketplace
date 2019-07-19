@@ -29,7 +29,10 @@ export default {
   beforeCreated() {},
   created() {},
   beforeMount() {},
-  mounted() {},
+  mounted() {
+    console.log(this.$store.dispatch("getAllCountries"));
+    return this.$store.dispatch("getAllCountries");
+  },
   beforeUpdate() {},
   updated() {},
   beforeDestroy() {},
