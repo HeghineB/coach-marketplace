@@ -1,8 +1,8 @@
 <template>
   <div class="container">
-    <p>Direct access to current state: {{ $store.state.countries.data }}</p>
+    <!-- <p>Direct access to current state: {{ $store.state.countries.data }}</p> -->
     <StoreButton />
-    <div class="country" v-for="country in countries" :key="country">{{ country }}</div>
+    <div class="country" v-for="country in countries" :key="country.alpha2Code">{{ country.name }}</div>
   </div>
 </template>
 
@@ -30,7 +30,6 @@ export default {
   created() {},
   beforeMount() {},
   mounted() {
-    console.log(this.$store.dispatch("getAllCountries"));
     return this.$store.dispatch("getAllCountries");
   },
   beforeUpdate() {},

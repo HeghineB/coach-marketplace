@@ -1,13 +1,11 @@
 import axios from 'axios';
 
 const actions = {
-    getAllCountries({ commit }) {
-        axios
+    async getAllCountries({ commit }) {
+        await axios
             .get('https://restcountries.eu/rest/v2/all')
-            .then(r => r.data)
-            .then(countries => {
-                console.log(countries)
-            })
+            .then(res => commit('setCountries', res.data)
+            )
     }
 }
 
