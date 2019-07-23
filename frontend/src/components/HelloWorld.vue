@@ -4,6 +4,7 @@
       class="countryInput"
       v-model="newBindCountry"
       placeholder="type new country"
+      :disabled="countries.actions.addCountry.loading"
       @keyup.enter="addCountry"
     />
     <div class="buttonsContainer">
@@ -11,7 +12,9 @@
       <StoreButton text="Clear everything" rem />
     </div>
 
-    <ul>
+
+    <div v-if="countries.loading">loading</div>
+    <ul v-else>
       <li class="country" v-for="country in allCountries" :key="country.id">
         {{ country.name }}
         <button class="delButton" @click="removeCountry(country)">x</button>
@@ -23,19 +26,19 @@
 <script>
 import StoreButton from "../components/ui/StoreButton";
 import { mapGetters, mapState, mapActions } from "vuex";
+
 export default {
   name: "name",
-  mixins: [],
   components: {
     StoreButton
   },
-  props: {},
   data() {
     return {
-      newBindCountry: ""
+      newBindCountry: "",
     };
   },
   computed: {
+    ...mapState(['countries']),
     ...mapGetters(["allCountries"])
   },
   methods: {
@@ -50,15 +53,9 @@ export default {
       this.$store.dispatch("deleteCountry", element.id);
     }
   },
-  watch: {},
-  beforeCreated() {},
-  created() {},
-  beforeMount() {},
-  mounted() {},
-  beforeUpdate() {},
-  updated() {},
-  beforeDestroy() {},
-  destroyed() {}
+  created() {
+    console.log(this.countries)
+  }
 };
 </script>
 

@@ -1,4 +1,13 @@
 export default {
     data: [],
-    actions: {}
+    loading: false,
+    success: false,
+    error: null,
+    actions: {
+        addCountry: {
+            loading: false,
+            success: false,
+            error: null,
+        }
+    }
 }

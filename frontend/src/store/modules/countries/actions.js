@@ -1,16 +1,34 @@
-import axios from 'axios';
+// import axios from 'axios';
 
 const actions = {
     getAllCountries: async (context) => {
-        let { data } = await axios.get('https://restcountries.eu/rest/v2/all')
-        const countries = data.map(country => ({ id: country.alpha2Code, name: country.name }))
-        console.log(countries);
-        context.commit('setCountries', countries);
+        context.commit('setCountriesRequest');
+        try {
+            let countries
+            setTimeout(() => {
+                countries = [
+                    { id: "belgium", name: 'Belgium' },
+                    { id: "belgium", name: 'Belgium' },
+                    { id: "belgium", name: 'Belgium' },
+                ]
+                console.log(countries);
+                context.commit('setCountries', countries);
+                context.commit('setCountriesSuccess');
+            }, 2000)
+            // const countries = data.map(country => ({ id: country.alpha2Code, name: country.name }))
+        } catch (error) {
+            context.commit('setCountriesError', error.message);
+        }
     },
-
+    
     addNewCountry: (context, payload) => {
+        context.commit("addCountryRequest")
         let newCountry = { id: payload, name: payload };
-        context.commit("addCountry", newCountry)
+        
+        setTimeout(() => {
+            context.commit("addCountry", newCountry)
+            context.commit("addCountrySuccess")
+        }, 2000)
     },
 
     deleteCountry: (context, payload) => {
