@@ -1,7 +1,12 @@
 const mutations = {
     // Get countries
-    setCountries: (state, payload) => {
-        state.data = [...state.data, ...payload]
+    set_countries: (state, countries) => {
+        const oldState = { ...state.list }
+        countries.forEach(country => { // { id: "fghjk", name="BVeilf" }
+            oldState[country.id] = country
+        })
+        state.list = { ...oldState }
+
     },
     setCountriesRequest: (state) => {
         state.isLoading = true,

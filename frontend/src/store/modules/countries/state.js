@@ -1,11 +1,7 @@
 export default {
-    data: [],
-    isLoading: false,
-    isSuccess: false,
-    isError: null,
-    generatedList: false,
+    list: {},
     actions: {
-        getAllCountries: {
+        get_all: {
             isLoading: false,
             isSuccess: false,
             isError: null,

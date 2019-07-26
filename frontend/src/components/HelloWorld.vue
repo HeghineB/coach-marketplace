@@ -43,7 +43,7 @@ export default {
   },
   computed: {
     ...mapState(["countries"]),
-    ...mapGetters(["allCountries"]),
+    ...mapGetters(["allCountries", 'countryById']),
     disabledInput() {
       return this.countries.isLoading;
     }
@@ -58,7 +58,9 @@ export default {
   },
   watch: {},
   beforeCreated() {},
-  created() {},
+  created() {
+    const c = this.countryById(id)
+  },
   beforeMount() {},
   mounted() {},
   beforeUpdate() {},

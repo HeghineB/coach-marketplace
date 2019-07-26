@@ -1,11 +1,11 @@
-import axios from 'axios';
+import services from './services'
 
 const actions = {
     getAllCountries: async (context) => {
         context.commit('setCountriesRequest');
         let countries
         try {
-            let { data } = await axios.get('https://restcountries.eu/rest/v2/all')
+            let { data } = await services.getAll()
             countries = data.map(country => ({ id: country.alpha2Code, name: country.name }))
             console.log(countries);
             context.commit('setCountries', countries);
