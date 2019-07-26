@@ -4,6 +4,7 @@
       class="countryInput"
       v-model="newBindCountry"
       placeholder="type new country"
+      :disabled="disabledInput"
       @keyup.enter="addCountry"
     />
     <div class="buttonsContainer">
@@ -11,23 +12,28 @@
       <StoreButton text="Clear everything" rem />
     </div>
 
-    <ul>
-      <li class="country" v-for="country in allCountries" :key="country.id">
-        {{ country.name }}
-        <button class="delButton" @click="removeCountry(country)">x</button>
-      </li>
+    <ul v-if="!countries.actions.isLoading">
+      <CountryItem
+        class="country"
+        :country="country"
+        v-for="country in allCountries"
+        :key="country.id"
+      ></CountryItem>
     </ul>
+    <p v-else>Loading</p>
   </div>
 </template>
 
 <script>
 import StoreButton from "../components/ui/StoreButton";
+import CountryItem from "../components/ui/CountryItem";
 import { mapGetters, mapState, mapActions } from "vuex";
 export default {
   name: "name",
   mixins: [],
   components: {
-    StoreButton
+    StoreButton,
+    CountryItem
   },
   props: {},
   data() {
@@ -36,18 +42,18 @@ export default {
     };
   },
   computed: {
-    ...mapGetters(["allCountries"])
+    ...mapState(["countries"]),
+    ...mapGetters(["allCountries"]),
+    disabledInput() {
+      return this.countries.isLoading;
+    }
   },
   methods: {
     addCountry() {
       this.newBindCountry &&
         this.newBindCountry.length &&
         this.$store.dispatch("addNewCountry", this.newBindCountry);
-
       this.newBindCountry = null;
-    },
-    removeCountry(element) {
-      this.$store.dispatch("deleteCountry", element.id);
     }
   },
   watch: {},

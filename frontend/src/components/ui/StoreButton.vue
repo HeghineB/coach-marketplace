@@ -1,6 +1,7 @@
 <template>
   <div :class="{rem}" class="button">
-    <button @click="buttonAction">{{ text }}</button>
+    <button v-if="!rem" :class="{rem}" :disabled="genBtnDisabled" @click="buttonAction">{{ text }}</button>
+    <button v-else :class="{rem}" @click="buttonAction">{{ text }}</button>
   </div>
 </template>
 
@@ -21,15 +22,16 @@ export default {
   computed: {
     buttonAction() {
       return this.text === "Generate List" ? this.getCountries : this.removeAll;
+    },
+    genBtnDisabled() {
+      return this.$store.state.countries.generatedList;
     }
   },
   methods: {
     getCountries() {
-      console.log("I am working- gen");
       return this.$store.dispatch("getAllCountries");
     },
     removeAll() {
-      console.log("I am working- rem");
       return this.$store.dispatch("clearAll");
     }
   },
